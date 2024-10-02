@@ -30,13 +30,24 @@ export interface IDropDown {
 export interface ITabStore {
   tab: string;
   setTab: (newTab: string) => void;
-  selection: string;
-  setSelection: (newSelection: string) => void;
 }
 
-export interface IChatStore {
+// 코딩테스트 관련 Interface
+export interface ICodingTestStore {
+  // 채팅 관련 state
   checkAnswerOnly: boolean;
   setCheckAnswerOnly: () => void;
   sendWithCode: boolean;
   setSendWithCode: () => void;
+  // 코딩 관련 state
+  language: string;
+  setLanguage: (newLanguage: string) => void;
+  hasSolved: boolean;
+  setHasSolved: (isCorrect: boolean) => void;
+  isPosting: boolean;
+  setIsPosting: (state: boolean) => void;
+}
+
+export interface ICheckBoxIcon {
+  isActive?: boolean;
 }

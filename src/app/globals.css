@@ -45,7 +45,7 @@ textarea {
 
   /* 1px 가로줄 */
   .division {
-    @apply w-full h-[1px] bg-border-2;
+    @apply w-full h-[1px] bg-border-2 shrink-0;
   }
 
   /* 작은 버튼-Primary (탑바 로그인 버튼 등) */
@@ -85,5 +85,10 @@ textarea {
   /* 말풍선 스타일링 */
   .bubble {
     @apply flex w-fit px-3 py-3 rounded-3xl shadow-1;
+  }
+
+  /* 게시물 작성 정보 인풋 (제목, 비밀번호 등) */
+  .post-input {
+    @apply px-4 py-2 text-sm text-black border-b border-border-2;
   }
 }
