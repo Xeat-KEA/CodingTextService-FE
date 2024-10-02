@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+/* input 태그의 outline 제거 */
+input,
+textarea {
+  outline: none;
+}
+
+@layer utilities {
+  /* 그라데이션 색상 */
+  .gradient {
+    background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+  }
+
+  /* 그림자 */
+  .shadow-1 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  /* max-width 400px인 컨테이너 (로그인, 회원가입 등) */
+  .max-w-400 {
+    @apply w-full max-w-[400px] px-12;
+  }
+  /* max-width 800px인 컨테이너 (블로그 본문 등) */
+  .max-w-800 {
+    @apply w-full max-w-[800px] px-12;
+  }
+  /* max-width 1000px인 컨테이너 (블로그 홈, 게시글 목록 등) */
+  .max-w-1000 {
+    @apply w-full max-w-[1000px] px-12;
+  }
+  /* max-width 1200px인 컨테이너 (메인 페이지, 검색 결과 등) */
+  .max-w-1200 {
+    @apply w-full max-w-[1200px] px-12;
+  }
+
+  /* 1px 가로줄 */
+  .division {
+    @apply w-full h-[1px] bg-border-2;
+  }
+
+  /* 작은 버튼-Primary (탑바 로그인 버튼 등) */
+  .sm-btn-primary {
+    @apply px-4 py-2 bg-primary text-xs text-white font-bold;
+  }
+
+  /* 버튼 추상화 */
+  .btn {
+    @apply px-4 py-3 text-xs whitespace-nowrap;
+  }
+
+  /* 기본 버튼 */
+  .btn-default {
+    @apply btn border text-black border-border-2 rounded-lg;
+  }
+
+  /* Primary 색상 버튼 */
+  .btn-primary {
+    @apply btn bg-primary rounded-lg text-white font-bold;
+  }
+
+  .btn-disabled {
+    @apply btn bg-bg-1 border border-border-2 rounded-lg text-disabled;
+  }
+
+  /* 탑바 메뉴 버튼 */
+  .top-bar-menu-btn {
+    @apply flex items-center px-2 h-full cursor-pointer text-base font-semibold text-black whitespace-nowrap;
+  }
+
+  /* 프로필 메뉴 버튼 */
+  .profile-popup-menu {
+    @apply flex items-center px-4 h-8 text-xs cursor-pointer;
+  }
+
+  /* 말풍선 스타일링 */
+  .bubble {
+    @apply flex w-fit px-3 py-3 rounded-3xl shadow-1;
+  }
+}
