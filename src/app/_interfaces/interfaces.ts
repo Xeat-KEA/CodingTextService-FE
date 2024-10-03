@@ -26,6 +26,33 @@ export interface IDropDown {
   list: string[];
 }
 
+export interface IDialog {
+  icon?: JSX.Element;
+  title?: string;
+  content?: string;
+  isWarning?: boolean;
+  backBtn: string;
+  onBackBtnClick: () => void;
+  subBtn?: string;
+  onSubBtnClick?: () => void;
+  primaryBtn?: string;
+  redBtn?: string;
+  onBtnClick?: () => void;
+}
+
+export interface IPostEditor {
+  editorHeight: string;
+}
+
+export interface ICodeEditor {
+  isViewer?: boolean;
+  defaultValue?: string;
+}
+
+export interface IPrimeEditor {
+  height: string;
+}
+
 // 전역 변수 관련 Interface
 export interface ITabStore {
   tab: string;
@@ -46,6 +73,10 @@ export interface ICodingTestStore {
   setHasSolved: (isCorrect: boolean) => void;
   isPosting: boolean;
   setIsPosting: (state: boolean) => void;
+  value: string;
+  setValue: (code: string) => void;
+  memo: string;
+  setMemo: (string: string) => void;
 }
 
 export interface ICheckBoxIcon {

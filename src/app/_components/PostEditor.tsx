@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { LgCheckBoxIcon } from "./Icons";
-import PrimeEditor from "./PrimeEditor";
+import { IPostEditor } from "../_interfaces/interfaces";
 
-export default function PostEditor() {
+export default function PostEditor({ editorHeight }: IPostEditor) {
   // 비밀글 여부 state
   const [isSecret, setIsSecret] = useState(false);
+
+  const ref = useRef(null);
 
   return (
     <form className="w-full flex flex-col gap-4">
@@ -28,7 +30,9 @@ export default function PostEditor() {
         </div>
       </div>
       {/* 텍스트 에디터 */}
-      <div className="flex h-full">{/* 개발 예정 */}</div>
+      <div ref={ref} className="flex h-full overflow-hidden">
+        <div className="h-[300px]"></div>
+      </div>
     </form>
   );
 }

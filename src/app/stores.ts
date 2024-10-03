@@ -23,6 +23,12 @@ export const useCodingTestStore = create<ICodingTestStore>((set) => ({
   // 글 쓰기 여부
   isPosting: false,
   setIsPosting: (state) => set({ isPosting: state }),
+  // 코드
+  value: "",
+  setValue: (code) => set({ value: code }),
+  // 메모장
+  memo: "",
+  setMemo: (string) => set({ memo: string }),
 }));
 
 // 탭바 메뉴 관련 전역변수

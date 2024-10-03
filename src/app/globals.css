@@ -48,6 +48,11 @@ textarea {
     @apply w-full h-[1px] bg-border-2 shrink-0;
   }
 
+  /* 팝업 시 오버레이 */
+  .overlay {
+    @apply fixed w-screen h-screen bg-black bg-opacity-20 left-0 top-0 z-50;
+  }
+
   /* 작은 버튼-Primary (탑바 로그인 버튼 등) */
   .sm-btn-primary {
     @apply px-4 py-2 bg-primary text-xs text-white font-bold;
@@ -68,6 +73,12 @@ textarea {
     @apply btn bg-primary rounded-lg text-white font-bold;
   }
 
+  /* red 색상 버튼 */
+  .btn-red {
+    @apply btn bg-red rounded-lg text-white font-bold;
+  }
+
+  /* 비활성화 버튼 */
   .btn-disabled {
     @apply btn bg-bg-1 border border-border-2 rounded-lg text-disabled;
   }
@@ -90,5 +101,19 @@ textarea {
   /* 게시물 작성 정보 인풋 (제목, 비밀번호 등) */
   .post-input {
     @apply px-4 py-2 text-sm text-black border-b border-border-2;
+  }
+
+  /* 텍스트 에디터 css 오버라이딩 */
+  .ql-toolbar {
+    @apply h-[43px] flex items-center border-b-0 !important;
+  }
+  .ql-size {
+    @apply w-full !important;
+  }
+  .ql-size > span:last-child {
+    @apply h-[256px] overflow-y-scroll;
+  }
+  .ql-size > span > span {
+    @apply text-center;
   }
 }
