@@ -45,7 +45,7 @@ export default function CodeEditPanel() {
             onChange={(e) => setMemo(e.target.value)}
             className={`${
               tab === "메모장" ? "block" : "hidden"
-            } w-full h-full px-4 py-3 text-black`}
+            } w-full h-full px-4 py-3 text-black resize-none`}
           />
         </div>
         {/* 구분선 */}

@@ -103,17 +103,55 @@ textarea {
     @apply px-4 py-2 text-sm text-black border-b border-border-2;
   }
 
-  /* 텍스트 에디터 css 오버라이딩 */
-  .ql-toolbar {
-    @apply h-[43px] flex items-center border-b-0 !important;
+  /* 텍스트 에디터 관련 스타일링 */
+  .toolbar-btn {
+    @apply px-1 py-[2px] rounded-lg text-black hover:bg-bg-1;
   }
-  .ql-size {
-    @apply w-full !important;
+  .is-active {
+    @apply text-white bg-black hover:bg-black;
   }
-  .ql-size > span:last-child {
-    @apply h-[256px] overflow-y-scroll;
+
+  /* 텍스트 요소 불필요한 마진 제거 */
+  .prose p,
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose ul,
+  .prose ol {
+    margin: 0;
   }
-  .ql-size > span > span {
-    @apply text-center;
+  .prose hr {
+    margin: 2rem 0;
+  }
+
+  /* code 태그 css 오버라이딩 */
+  .prose code::before,
+  .prose code::after {
+    content: none;
+  }
+  .prose code {
+    background-color: #f0f0f0;
+    border-radius: 0.4rem;
+    color: #6b6ced;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0.2em 0.4em;
+  }
+
+  /* code block css 오버라이딩 */
+  .prose pre {
+    background: #222222;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-family: "JetBrainsMono", monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+
+    code {
+      background: none;
+      color: inherit;
+      font-size: 0.8rem;
+      padding: 0;
+    }
   }
 }

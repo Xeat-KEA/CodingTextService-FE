@@ -1,15 +1,13 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { LgCheckBoxIcon } from "./Icons";
-import { IPostEditor } from "../_interfaces/interfaces";
+import TiptapEditor from "./TipTapEditor/TiptapEditor";
 
-export default function PostEditor({ editorHeight }: IPostEditor) {
+export default function PostEditor() {
   // 비밀글 여부 state
   const [isSecret, setIsSecret] = useState(false);
 
-  const ref = useRef(null);
-
   return (
-    <form className="w-full flex flex-col gap-4">
+    <form className="w-full h-full flex flex-col gap-4">
       <div className="flex gap-4">
         {/* 제목 입력 */}
         <input className="grow post-input" placeholder="제목을 입력해주세요" />
@@ -30,9 +28,7 @@ export default function PostEditor({ editorHeight }: IPostEditor) {
         </div>
       </div>
       {/* 텍스트 에디터 */}
-      <div ref={ref} className="flex h-full overflow-hidden">
-        <div className="h-[300px]"></div>
-      </div>
+      <TiptapEditor />
     </form>
   );
 }

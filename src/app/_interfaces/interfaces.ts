@@ -1,3 +1,5 @@
+import { Editor } from "@tiptap/react";
+
 export interface ITopBar {
   isLoggedIn?: boolean;
   isCodingPage?: boolean;
@@ -40,17 +42,13 @@ export interface IDialog {
   onBtnClick?: () => void;
 }
 
-export interface IPostEditor {
-  editorHeight: string;
-}
-
 export interface ICodeEditor {
   isViewer?: boolean;
   defaultValue?: string;
 }
 
-export interface IPrimeEditor {
-  height: string;
+export interface IToolBar {
+  editor: Editor | null;
 }
 
 // 전역 변수 관련 Interface

@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // 텍스트 입력 공간 늘어나지 않는 현상 해결
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "100ch",
+          },
+        },
+      },
       colors: {
         // Theme 색상
         primary: "#6B6CED",
@@ -53,6 +61,7 @@ const config: Config = {
       "3xl": ["48px", "130%"],
     },
   },
-  plugins: [],
+  // 텍스트 에디터 내 폰트 크기 변화를 위한 plugin
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

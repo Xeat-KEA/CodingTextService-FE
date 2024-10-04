@@ -28,7 +28,7 @@ export default function NewPostPanel() {
         {/* 탭바 */}
         <TabBar menuList={POSTING_TAB_BAR_MENU} />
         {/* 컴파일러 / 메모장 */}
-        <div className="w-full grow flex border border-border-2 rounded-2xl overflow-hidden">
+        <div className="w-full h-[200px] shrink-0 flex overflow-hidden">
           {/* 코드 뷰어 */}
           <div
             className={`w-full h-full rounded-2xl overflow-hidden ${
@@ -43,12 +43,14 @@ export default function NewPostPanel() {
             onChange={(e) => setMemo(e.target.value)}
             className={`${
               tab === "메모장" ? "block" : "hidden"
-            } w-full h-full px-4 py-3 text-black`}
+            } w-full h-full px-4 py-3 text-black border border-border-2 rounded-2xl resize-none`}
           />
         </div>
         <div className="division" />
         {/* 새 게시글 내용 작성 */}
-        <PostEditor editorHeight="300px" />
+        <div className="w-full h-full overflow-hidden">
+          <PostEditor />
+        </div>
         <div className="division" />
         {/* 하단 버튼 */}
         <div className="flex gap-4 self-end">
