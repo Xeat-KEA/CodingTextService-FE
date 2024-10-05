@@ -51,6 +51,26 @@ export interface IToolBar {
   editor: Editor | null;
 }
 
+export interface IPostEditor {
+  isCodingTest?: boolean;
+  isEditing?: boolean;
+  onCancelClick: () => void;
+  onBtnClick: (data: IPost) => void;
+}
+
+export interface ICheckBoxIcon {
+  isActive?: boolean;
+}
+
+export interface IPost {
+  title: string;
+  isSecret?: boolean;
+  password?: string;
+  parentCategory?: string;
+  childCategory?: string;
+  content: string;
+}
+
 // 전역 변수 관련 Interface
 export interface ITabStore {
   tab: string;
@@ -77,6 +97,7 @@ export interface ICodingTestStore {
   setMemo: (string: string) => void;
 }
 
-export interface ICheckBoxIcon {
-  isActive?: boolean;
+export interface ITiptapStore {
+  content: string;
+  setContent: (string: string) => void;
 }

@@ -1,5 +1,9 @@
 import { create } from "zustand";
-import { ICodingTestStore, ITabStore } from "./_interfaces/interfaces";
+import {
+  ICodingTestStore,
+  ITabStore,
+  ITiptapStore,
+} from "./_interfaces/interfaces";
 
 // 코딩테스트 관련 전역변수
 export const useCodingTestStore = create<ICodingTestStore>((set) => ({
@@ -35,4 +39,10 @@ export const useCodingTestStore = create<ICodingTestStore>((set) => ({
 export const useTabStore = create<ITabStore>((set) => ({
   tab: "", // 현재 선택된 탭
   setTab: (newTab) => set({ tab: newTab }),
+}));
+
+// Tiptap Editor 내용 저장 전역번후
+export const useTiptapStore = create<ITiptapStore>((set) => ({
+  content: "",
+  setContent: (string) => set({ content: string }),
 }));

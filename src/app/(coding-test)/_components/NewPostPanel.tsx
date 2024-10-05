@@ -49,20 +49,16 @@ export default function NewPostPanel() {
         <div className="division" />
         {/* 새 게시글 내용 작성 */}
         <div className="w-full h-full overflow-hidden">
-          <PostEditor />
-        </div>
-        <div className="division" />
-        {/* 하단 버튼 */}
-        <div className="flex gap-4 self-end">
-          <button onClick={() => setIsPosting(false)} className="btn-default">
-            취소
-          </button>
-          <button
-            onClick={() => setIsDialogOpen((prev) => !prev)}
-            className="btn-primary"
-          >
-            새 게시글 등록
-          </button>
+          <PostEditor
+            isCodingTest
+            onCancelClick={() => setIsPosting(false)}
+            onBtnClick={(data) => {
+              // data post 부분 작성 필요
+              console.log(data);
+
+              setIsDialogOpen((prev) => !prev);
+            }}
+          />
         </div>
       </div>
       {isDialogOpen && (

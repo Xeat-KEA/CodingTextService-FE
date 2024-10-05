@@ -3,8 +3,10 @@ import StarterKit from "@tiptap/starter-kit";
 import ToolBar from "./ToolBar";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
+import { useTiptapStore } from "@/app/stores";
 
 export default function TiptapEditor() {
+  const { setContent } = useTiptapStore();
   const editor = useEditor({
     editorProps: {
       attributes: {
@@ -20,6 +22,9 @@ export default function TiptapEditor() {
       }),
       Image.configure({ inline: true, allowBase64: true }),
     ],
+    onUpdate({ editor }) {
+      setContent(editor.getHTML());
+    },
     immediatelyRender: false,
   });
 
