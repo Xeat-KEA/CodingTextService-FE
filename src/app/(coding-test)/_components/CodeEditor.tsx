@@ -3,15 +3,28 @@ import { useCodingTestStore } from "@/app/stores";
 import { langs } from "@uiw/codemirror-extensions-langs";
 import { xcodeDark } from "@uiw/codemirror-theme-xcode";
 import ReactCodeMirror, { EditorView } from "@uiw/react-codemirror";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function CodeEditor({ isViewer, defaultValue }: ICodeEditor) {
-  const { value, setValue } = useCodingTestStore();
+  const { value, setValue, language } = useCodingTestStore();
   useEffect(() => {
     if (defaultValue !== undefined) {
       setValue(defaultValue);
     }
   }, []);
+
+  const [lang, setLang] = useState<any>();
+  useEffect(() => {
+    if (language === "java") {
+      setLang(langs.java());
+    } else if (language === "python") {
+      setLang(langs.python());
+    } else if (language === "javascript") {
+      setLang(langs.javascript());
+    } else if (language === "c") {
+      setLang(langs.cpp());
+    }
+  }, [language]);
 
   return (
     <ReactCodeMirror
@@ -35,7 +48,7 @@ export default function CodeEditor({ isViewer, defaultValue }: ICodeEditor) {
           },
         }),
         EditorView.lineWrapping,
-        langs.javascript(),
+        lang,
       ]}
     />
   );
