@@ -12,7 +12,7 @@ export default function DropDown({
   return (
     <div
       onClick={() => setIsListOpen((prev) => !prev)}
-      className={`relative flex w-full bg-white border border-border-2 rounded-lg ${
+      className={`relative flex w-full bg-white border border-border-2 rounded-lg cursor-pointer ${
         isSmall ? "px-2 py-[6px]" : "px-4 py-2"
       }`}
     >
@@ -22,8 +22,9 @@ export default function DropDown({
       <span className="grow flex justify-center text-xs text-black">
         {selection}
       </span>
+      {/* 선택 항목 목록 */}
       {isListOpen && (
-        <ul className="absolute w-full left-0 top-[calc(100%+8px)] flex flex-col divide-y bg-white border border-border-2 rounded-lg shadow-1">
+        <ul className="absolute w-full left-0 top-[calc(100%+8px)] flex flex-col divide-y bg-white border border-border-2 rounded-lg shadow-1 cursor-pointer">
           {list.map((el, index) => (
             <li
               className={`w-full flex justify-center text-xs text-black ${
