@@ -9,6 +9,8 @@ export const CODING_BUTTONS = [
   { content: "코드 제출", url: "/" },
 ];
 
+export const POSTING_TAB_BAR_MENU = ["코드 뷰어", "메모장"];
+
 // 채팅 더미 데이터
 export const dummyChats = [
   { role: "gpt", content: "문제 내용" },

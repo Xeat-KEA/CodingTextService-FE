@@ -1,7 +1,7 @@
 import { MouseEvent, useState } from "react";
 import { SendMessageIcon, SettingIcon } from "./Icons";
 import ToggleBtn from "@/app/_components/ToggleBtn";
-import { useChatStore } from "@/app/stores";
+import { useCodingTestStore } from "@/app/stores";
 
 export default function ChatInput() {
   const [isSettingOpen, setIsSettingOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function ChatInput() {
 
   // 채팅 관련 설정 전역 변수
   const { checkAnswerOnly, setCheckAnswerOnly, sendWithCode, setSendWithCode } =
-    useChatStore();
+    useCodingTestStore();
 
   return (
     <form className="relative last:w-full flex items-center px-4 py-2 gap-3 bg-white border border-border-2 rounded-full">

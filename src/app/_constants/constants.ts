@@ -14,3 +14,22 @@ export const PROFILE_MENU = [
 
 // 프로그래밍 언어 목록
 export const PROGRAMMING_LANGUAGES = ["java", "python", "javascript", "c"];
+
+// 텍스트 에디터 폰트 크기 목록
+export const FONT_SIZE = [
+  "8px",
+  "9px",
+  "10px",
+  "11px",
+  "12px",
+  "14px",
+  "16px",
+  "18px",
+  "24px",
+  "30px",
+  "36px",
+  "48px",
+  "60px",
+  "72px",
+  "96px",
+];
